@@ -45,11 +45,11 @@ class DashboardFragment : Fragment() {
     private fun insertData() {
         val exerciseName = binding.editTextText.text.toString()
         val bodyPart = binding.editTextText2.text.toString()
-        //val weekday = binding.editTextText3.text.toString()
+        val weekday = binding.editTextText2.text.toString()
 
         if(inputCheck(exerciseName, bodyPart)){
             val exercise = Exercise(exerciseName, bodyPart, 0)
-            //val weekday = Weekday(weekday, 8)
+            val weekday = Weekday(weekday, 8)
             mExerciseViewModel.addExercise(exercise)
             //mExerciseViewModel.addWeekday(weekday)
             Toast.makeText(requireContext(),"Successfully Added", Toast.LENGTH_LONG).show()

@@ -13,13 +13,13 @@ import kotlinx.coroutines.launch
 class ExerciseViewModel(application: Application): AndroidViewModel(application) {
 
     //private val readAllData: List<Exercise>
-    //private val readAllData2: LiveData<List<Weekday>>
+    //private val readAllData2: List<Weekday>
     private val repository: ExerciseRepository
 
     init{
         val exerciseDao = ExerciseDatabase.getDatabase(application).exerciseDao()
-        val weekdayDao = ExerciseDatabase.getDatabase(application).weekdayDoa()
-        repository = ExerciseRepository(exerciseDao, weekdayDao)
+        //val weekdayDao = ExerciseDatabase.getDatabase(application).weekdayDoa()
+        repository = ExerciseRepository(exerciseDao)
         //readAllData = repository.readAllData
         //readAllData2 = repository.readAllData2
     }
@@ -29,6 +29,8 @@ class ExerciseViewModel(application: Application): AndroidViewModel(application)
             repository.addExercise(exercise)
         }
     }
+
+
 
     /*
     fun addWeekday(weekday: Weekday){
