@@ -9,11 +9,11 @@ import com.example.applicationrd.roomDatabase.data.ExerciseDao
 import com.example.applicationrd.roomDatabase.weekdayData.Weekday
 import com.example.applicationrd.roomDatabase.weekdayData.WeekdayDao
 
-@Database(entities = [Exercise::class], version =1, exportSchema = false)
+@Database(entities = [Exercise::class, Weekday::class], version =1, exportSchema = false)
 abstract class ExerciseDatabase: RoomDatabase() {
 
     abstract fun exerciseDao(): ExerciseDao
-    //abstract fun weekdayDoa(): WeekdayDao
+    abstract fun weekdayDoa(): WeekdayDao
 
     companion object {
         @Volatile
