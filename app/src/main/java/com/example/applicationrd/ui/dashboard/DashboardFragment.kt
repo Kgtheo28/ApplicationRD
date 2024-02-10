@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.applicationrd.R
 import com.example.applicationrd.databinding.FragmentDashboardBinding
 import com.example.applicationrd.roomDatabase.data.Exercise
+import com.example.applicationrd.roomDatabase.data.ExerciseWeekdayCrossRef
 import com.example.applicationrd.roomDatabase.data.Weekday
 import com.example.applicationrd.roomDatabase.repository.ExerciseViewModel
 
@@ -50,8 +51,13 @@ class DashboardFragment : Fragment() {
         if(inputCheck(exerciseName, bodyPart)){
             val exercise = Exercise(exerciseName, bodyPart, 0)
             val weekday = Weekday(weekday, 8)
+            val exerciseWeekdayCrossRef = ExerciseWeekdayCrossRef(0, 8)
+
+            //add data to database
             mExerciseViewModel.addExercise(exercise)
             mExerciseViewModel.addWeekday(weekday)
+            mExerciseViewModel.addCrossRef(exerciseWeekdayCrossRef)
+
             Toast.makeText(requireContext(),"Successfully Added", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_navigation_dashboard_to_navigation_home)
         }else{

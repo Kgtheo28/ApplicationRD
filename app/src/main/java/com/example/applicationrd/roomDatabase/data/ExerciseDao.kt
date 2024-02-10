@@ -24,3 +24,9 @@ interface WeekdayDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addWeekday(weekday: Weekday)
 }
+
+@Dao
+interface ExerciseWeekdayCrossRefDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun addCrossRef(exerciseWeekdayCrossRef: ExerciseWeekdayCrossRef)
+}

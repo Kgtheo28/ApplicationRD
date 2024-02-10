@@ -19,3 +19,9 @@ data class Weekday(
     @PrimaryKey(autoGenerate = true)
     val weekdayId : Int
 )
+
+@Entity(tableName = "exercise_weekday_cross", primaryKeys = ["id", "weekdayId"])
+data class ExerciseWeekdayCrossRef(
+    val id: Int,
+    val weekdayId: Int
+)
