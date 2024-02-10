@@ -12,3 +12,15 @@ interface ExerciseDao {
     suspend fun addExercise(exercise: Exercise)
 
 }
+
+@Dao
+interface WeekdayDao {
+
+    @Query("SELECT * FROM weekday_table ORDER BY weekdayId ASC")
+    fun readAllData2(): List<Weekday>
+
+
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun addWeekday(weekday: Weekday)
+}

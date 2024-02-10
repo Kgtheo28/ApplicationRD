@@ -11,3 +11,11 @@ data class Exercise(
     @PrimaryKey(autoGenerate = true)
     val id : Int
 )
+
+@Entity(tableName = "weekday_table")
+data class Weekday(
+    val weekdayName: String,
+
+    @PrimaryKey(autoGenerate = true)
+    val weekdayId : Int
+)

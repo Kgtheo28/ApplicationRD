@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.applicationrd.roomDatabase.ExerciseDatabase
 import com.example.applicationrd.roomDatabase.data.Exercise
-import com.example.applicationrd.roomDatabase.weekdayData.Weekday
+import com.example.applicationrd.roomDatabase.data.Weekday
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

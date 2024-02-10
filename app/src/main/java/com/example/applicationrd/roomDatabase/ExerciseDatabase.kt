@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.applicationrd.roomDatabase.data.Exercise
 import com.example.applicationrd.roomDatabase.data.ExerciseDao
-import com.example.applicationrd.roomDatabase.weekdayData.Weekday
-import com.example.applicationrd.roomDatabase.weekdayData.WeekdayDao
+import com.example.applicationrd.roomDatabase.data.Weekday
+import com.example.applicationrd.roomDatabase.data.WeekdayDao
 
 @Database(entities = [Exercise::class, Weekday::class], version =1, exportSchema = false)
 abstract class ExerciseDatabase: RoomDatabase() {
@@ -28,7 +28,7 @@ abstract class ExerciseDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     ExerciseDatabase::class.java,
-                    "exercise_database"
+                    "exercise_ with_Weekdays_database"
                 ).build()
                 INSTANCE = instance
                 return instance
